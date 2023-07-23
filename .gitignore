@@ -1,0 +1,11 @@
+# frontend
+angularclient/.angular/*
+angularclient/.idea/*
+angularclient/.vscode/*
+angularclient/node_modules/*
+
+# backend
+webGame/.mvn/*
+webGame/.idea/*
+webGame/HELP.md
+webGame/target/*
