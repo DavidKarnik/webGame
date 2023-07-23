@@ -1,13 +1,12 @@
-<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" (click)="onClickTarget()">
-  <!-- Kruh s bílým plněním (tělo terče) -->
-  <circle #target r="15" fill="white"/>
-
+<svg #target width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
   <!-- Kruhy s různými poloměry a barvami tvořící terč -->
-  <circle [attr.cx]="targetPosition.x" [attr.cy]="targetPosition.y" r="10" fill="red"/>
-  <circle [attr.cx]="targetPosition.x" [attr.cy]="targetPosition.y" r="5" fill="white"/>
+  <circle [attr.cx]="targetPosition.x" [attr.cy]="targetPosition.y" r="20" fill="red"/>
+  <circle [attr.cx]="targetPosition.x" [attr.cy]="targetPosition.y" r="10" fill="white"/>
 </svg>
 
 <div class="score">
   Skóre: {{ score }}
   Miss: {{ miss }}
+  MouseX: {{ amouseX }}
+  MouseY: {{ amouseY }}
 </div>
