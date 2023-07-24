@@ -14,6 +14,7 @@ header {
 .info {
   display: flex;
   flex-direction: row;
+  margin: 0 0 0 30px;
 }
 
 .score, .miss {
@@ -23,12 +24,16 @@ header {
 }
 
 .score .label, .miss .label {
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .score .value, .miss .value {
   font-size: 18px;
+}
+
+.spacer {
+  margin: 0 10px; /* Mezera mezi texty "Skóre" a "Miss" */
 }
 
 .buttons {
