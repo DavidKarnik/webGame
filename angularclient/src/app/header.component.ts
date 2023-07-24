@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ScoreService } from './score.service';
 import { ScoreModel } from './score.model';
@@ -9,7 +9,8 @@ import { ScoreModel } from './score.model';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  score: number = 0;
+  // score: number = 0;
+  // miss = 0;
 
   // constructor(private http: HttpClient) { }
   scoreData: ScoreModel;
@@ -22,6 +23,14 @@ export class HeaderComponent implements OnInit {
     // Tento cyklus se spouští pouze jednou po konstrukci komponenty a při prvním renderování na obrazovku
     // Při inicializaci komponenty získáme skóre z backendu
     // this.getScoreFromBackend();
+  }
+
+  @HostListener('document:click', ['$event'])
+  onClickGetScore(event: MouseEvent) {
+    // on every click refresh score
+    this.scoreData = this.scoreService.getScoreData();
+    // this.score = this.scoreData.score;
+    // this.miss = this.scoreData.misses;
   }
 
   // Metoda pro získání skóre z backendu
@@ -54,6 +63,7 @@ export class HeaderComponent implements OnInit {
     //     console.error('Chyba při resetování skóre: ', error);
     //   }
     // );
+    // reset ScoreService values
     this.scoreService.reset();
   }
 

@@ -1,7 +1,15 @@
 <header>
-  <div class="score">
-    <span>Skóre: {{ score }}</span>
+  <div class="info">
+    <div class="score">
+      <span class="label">Skóre:</span>
+      <span class="value">{{ scoreData.score }}</span>
+    </div>
+    <div class="miss">
+      <span class="label">Miss:</span>
+      <span class="value">{{ scoreData.misses }}</span>
+    </div>
   </div>
+
   <div class="buttons">
     <button (click)="reset()">Reset</button>
     <button (click)="showLeaderboard()">Leaderboard</button>
