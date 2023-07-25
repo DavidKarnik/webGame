@@ -1,6 +1,6 @@
 # Web Game Project
 
-Project of simple Web Game. Event click on targets to Score/Miss. Project is implemented with several tools, IDEs and languages so there is little mess in files.
+Just for learn TypeScript, Angular and comunication Frontend <-> Backend (Java - Spring). Project of simple Web Game. Event click on targets to Score/Miss. Project is implemented with several tools, IDEs and languages so there is little mess in files.
 
 # Angular
 
@@ -9,10 +9,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
