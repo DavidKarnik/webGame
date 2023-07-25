@@ -12,6 +12,9 @@ export class TargetComponent {
   amouseX = 0;
   amouseY = 0;
 
+  // size of target (radius)
+  offsetTarget = 30;
+
   targetPosition = {x: 100, y: 100}; // Počáteční pozice terče
 
   constructor(private scoreService: ScoreService) {
@@ -24,7 +27,6 @@ export class TargetComponent {
     const mouseY = event.clientY;
 
     // Umístění X a Y relativně k oknu prohlížeče
-    const offsetTarget = 30;
 
     this.amouseX = mouseX;
     this.amouseY = mouseY;
@@ -33,10 +35,10 @@ export class TargetComponent {
     const targetPositionY = this.targetPosition.y;
 
     if (
-      mouseX >= targetPositionX - offsetTarget &&
-      mouseX <= targetPositionX + offsetTarget &&
-      mouseY >= targetPositionY - offsetTarget &&
-      mouseY <= targetPositionY + offsetTarget
+      mouseX >= targetPositionX - this.offsetTarget &&
+      mouseX <= targetPositionX + this.offsetTarget &&
+      mouseY >= targetPositionY - this.offsetTarget &&
+      mouseY <= targetPositionY + this.offsetTarget
     ) {
       // Kliknutí na terč
       this.onClickTarget();
@@ -63,16 +65,35 @@ export class TargetComponent {
     const maxY = window.innerHeight; // Maximální hodnota pro souřadnici y
     const minX = 0;
     const minY = 0;
-    // const maxX = 1600;
-    // const maxY = 700;
+    // console.log(`maxX = ${maxX}`);
+    // console.log(`maxY = ${maxY}`);
 
     // Generujeme náhodné souřadnice pro novou pozici terče
-    const newTargetX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
-    const newTargetY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
+    let newTargetX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
+    let newTargetY = Math.floor(Math.random() * (maxY - minY + 1)) + minY;
+
+    // okraje location !
+    // footer (header) location ... header = 10% of screen + 20 padding !
+    let headerSize = (maxY * 0.1) + 20;
+    // console.log(`headerSize = ${headerSize}`);
+    if (newTargetX < this.offsetTarget) {
+      newTargetX = this.offsetTarget;
+    }
+    if (newTargetX > (maxX - this.offsetTarget)) {
+      newTargetX = (maxX - this.offsetTarget);
+    }
+    if (newTargetY < this.offsetTarget) {
+      newTargetY = this.offsetTarget;
+    }
+    if (newTargetY > (maxY - this.offsetTarget - headerSize)) {
+      newTargetY = (maxY - this.offsetTarget - headerSize);
+    }
+
 
     // Přesuneme terč na novou pozici
     this.targetPosition.x = newTargetX;
     this.targetPosition.y = newTargetY;
+    // console.log(`target x = ${newTargetX} y = ${newTargetY}`);
     // console.log(`newTargetX: ${newTargetX}`);
     // console.log(`newTargetY: ${newTargetY}`);
   }

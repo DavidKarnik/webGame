@@ -8,14 +8,21 @@
 <style>
 
   body {
-    background-image: url("../assets/pixelBackground2.jpg");
+    /* Center the background image */
+    background-color: black;
+    background-image: url("../assets/background_spaceship.jpg");
     background-size: cover;
-    background-repeat: no-repeat; /* Ensure the background image doesn't repeat */
-    height: 100vh;
-    margin: -10px;
-  }
+    background-repeat: no-repeat;
+    background-position: center center;
 
-  h1 {
-    margin: 0;
+    /* Set the height of the body to the viewport height */
+    height: 95vh;
+
+    /* Remove margin and padding to prevent any unwanted spacing */
+    margin: -10px;
+    padding: 0;
+
+    /* Ensure that the body doesn't scroll */
+    overflow: hidden;
   }
 </style>
