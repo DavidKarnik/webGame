@@ -2,6 +2,9 @@
 
 Just for learn TypeScript, Angular and comunication Frontend <-> Backend (Java - Spring). Project of simple Web Game. Event click on targets to Score/Miss. Project is implemented with several tools, IDEs and languages so there is little mess in files.
 
+Main Idea
+Simple web game (click on target to get point). <- Frontend, Backend -> Send data to Java Spring boot and manage them. Store them into DATABASE and send Leaderboard to the Frontend.
+
 # Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
