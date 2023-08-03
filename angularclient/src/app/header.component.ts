@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   // constructor(private http: HttpClient) { }
   scoreData: ScoreModel;
 
-  players: PlayerModel[] = []; // Definujte pole pro ukládání dat hráčů
+  players: PlayerModel[] = []; // pole pro ukládání dat hráčů
 
   @ViewChild('myModal') modal!: ElementRef;
 
@@ -80,12 +80,19 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  /**
+   * Just close modal Leaderboard
+   */
   closeLeaderboard() {
     if (this.modal) {
       this.modal.nativeElement.style.display = "none";
     }
   }
 
+  /**
+   * Modal is open and is clicked outside of modal window -> close modal
+   * @param event - Mouse click
+   */
   onOutsideClick(event: MouseEvent) {
     console.log(`onOutsideClick() run`)
     if (this.modal && event.target === this.modal.nativeElement) {
@@ -93,6 +100,9 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  /**
+   * Load players[] from PLayerService
+   */
   loadPlayersData() {
     // Zavoláme službu pro načtení dat hráčů
     this.playerService.getPlayers().subscribe(
@@ -103,5 +113,18 @@ export class HeaderComponent implements OnInit {
         console.error('Chyba při načítání dat hráčů: ', error);
       }
     );
+
+    // this.players = this.playerService.getUsers();
+
+    // const playersResponse = await this.playerService.getUsers();
+    this.playerService.getUsers()
+      .then((playersResponse) => {
+        // const playersArray = playersResponse.data;
+        const playersArray = playersResponse;
+        console.log(playersArray);
+      })
+      .catch((error) => {
+        console.error('Chyba:', error);
+      });
   }
 }
