@@ -1,38 +1,25 @@
 package main.webgame.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-//import javax.persistence.*;
-//import static javax.persistence.GenerationType.SEQUENCE;
+//import static javax.persistence.GenerationType.SEQUENCE; ... javax is now jakarta !!
 
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity(name = "Player")
-@Table(
-        name = "player",
-        uniqueConstraints = {
-                @UniqueConstraint(name = "player_id_unique", columnNames = "email")
-        }
-)
+@Entity
 public class Player {
-    
-    private String nickname;
-    private int score;
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id; // some ID number for store in database
+    @Column(name = "nickname")
+    private String nickname;
+    @Column(name = "score")
+    private int score;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public Long getId() {
-        return id;
-    }
 }
