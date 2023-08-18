@@ -11,6 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @Entity
+@Table
 public class Player {
 
     @Id
@@ -21,5 +22,9 @@ public class Player {
     @Column(name = "score")
     private int score;
 
-
+    public Player(String nickname, int score) {
+        super();
+        this.nickname = nickname;
+        this.score = score;
+    }
 }
