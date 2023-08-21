@@ -25,7 +25,7 @@ public class LeaderboardController {
      */
     @GetMapping("/leaderboard")
     public Player[] showLeaderboard() {
-
+        Player plr = new Player("Player1",123);
         return null;
     }
 }
