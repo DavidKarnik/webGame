@@ -1,6 +1,6 @@
 package main.webgame.controller;
 
-import main.webgame.UserRepository;
+import main.webgame.PlayerRepository;
 import main.webgame.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/api") // prefix need to add to the WebSecurityConfig.java
+//@RequestMapping("/api") // prefix need to add to the WebSecurityConfig.java
 public class LeaderboardController {
 
     @Autowired
-    UserRepository userRepository;
+    PlayerRepository playerRepository;
 
     /**
      * Load the main page
@@ -32,13 +32,13 @@ public class LeaderboardController {
     @GetMapping("/save")
     public Player[] saveDebugging() {
         Player plr = new Player("Player1",123);
-        userRepository.save(new Player("Player1",123));
+        playerRepository.save(new Player("Player1",123));
         return null;
     }
 
     @GetMapping("/leaderboard")
     public List<Player> showLeaderboard() {
-        return userRepository.findAll();
+        return playerRepository.findAll();
     }
 
 }
