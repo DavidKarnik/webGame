@@ -90,7 +90,7 @@ export class HeaderComponent implements OnInit {
   }
 
   /**
-   * Modal is open and is clicked outside of modal window -> close modal
+   * Modal IS OPEN and is clicked outside of the modal window -> close modal
    * @param event - Mouse click
    */
   onOutsideClick(event: MouseEvent) {
