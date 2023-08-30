@@ -30,10 +30,11 @@ public class LeaderboardController {
      * @return - Array of Player[]
      */
     @GetMapping("/save")
-    public Player[] saveDebugging() {
+    public String saveDebugging() {
         Player plr = new Player("Player1",123);
         playerRepository.save(new Player("Player1",123));
-        return null;
+//        return null;
+        return "index";
     }
 
     @GetMapping("/leaderboard")
