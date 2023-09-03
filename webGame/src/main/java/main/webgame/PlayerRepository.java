@@ -15,7 +15,7 @@ public interface PlayerRepository extends JpaRepository<Player, Integer> {
 
     // can add custom query
 
-    @Query(value = "SELECT * FROM player ORDER BY score DESC LIMIT 100", nativeQuery = true)
+    @Query(value = "SELECT * FROM player ORDER BY score DESC LIMIT 10", nativeQuery = true)
     List<Player> findTop100ByScoreDesc();
     // nativeQuery = true -> příkazy se berou jako výchozí SQL jazyk pro můj konkrétní databázový systém, ne jako JPQL
     // výhoda pro složitější příkazy, nevýhoda -> nepřenositelné na jiné datab. systémy, nutnost ochrany vstupů před SQL injections

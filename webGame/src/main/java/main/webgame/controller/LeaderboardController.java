@@ -17,6 +17,7 @@ public class LeaderboardController {
     PlayerRepository playerRepository;
 
     @GetMapping("/users")
+    @ResponseBody
     public List<Player> getUsers() {
         return (List<Player>) playerRepository.findAll();
     }
@@ -27,6 +28,7 @@ public class LeaderboardController {
     }
 
     @GetMapping("/leaderboard")
+    @ResponseBody
     public List<Player> showLeaderboard() {
         return playerRepository.findAll();
     }
