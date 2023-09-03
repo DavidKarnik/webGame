@@ -25,7 +25,7 @@ public class LeaderboardController {
     void addPlayer(@RequestBody Player _player) {
         playerRepository.save(_player);
     }
-    
+
     @GetMapping("/leaderboard")
     public List<Player> showLeaderboard() {
         return playerRepository.findAll();

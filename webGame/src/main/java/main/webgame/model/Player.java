@@ -27,4 +27,13 @@ public class Player {
         this.nickname = nickname;
         this.score = score;
     }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "id=" + id +
+                ", nickname='" + nickname + '\'' +
+                ", score=" + score +
+                '}';
+    }
 }
