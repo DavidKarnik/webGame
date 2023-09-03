@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {PlayerModel} from './player.model';
+import {Player} from './player';
 import {Observable} from 'rxjs';
 
 // (Remove this line if running in the browser)
@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 
 // get data from GET request
 type GetPlayersResponse = {
-  data: PlayerModel[];
+  data: Player[];
   // nickname: string;
   // score: number;
 };
@@ -20,7 +20,7 @@ type GetPlayersResponse = {
 export class PlayerService {
   private playersUrl = '/api/players'; // URL backendového API pro načítání hráčů
 
-  players: PlayerModel[] = []; // pole pro ukládání dat hráčů
+  players: Player[] = []; // pole pro ukládání dat hráčů
 
   constructor(private http: HttpClient) {
   }
@@ -28,8 +28,8 @@ export class PlayerService {
   /**
    * Get Array of players[]
    */
-  getPlayers(): Observable<PlayerModel[]> {
-    return this.http.get<PlayerModel[]>(this.playersUrl); // Vracíme Observable pole hráčů
+  getPlayers(): Observable<Player[]> {
+    return this.http.get<Player[]>(this.playersUrl); // Vracíme Observable pole hráčů
   }
 
   /**

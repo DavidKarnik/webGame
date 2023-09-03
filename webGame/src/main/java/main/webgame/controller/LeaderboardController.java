@@ -18,7 +18,7 @@ public class LeaderboardController {
 
     @GetMapping("/users")
     public List<Player> getUsers() {
-        return playerRepository.findAll();
+        return (List<Player>) playerRepository.findAll();
     }
 
     @PostMapping("/users")

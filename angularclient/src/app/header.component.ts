@@ -3,7 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { ScoreService } from './score.service';
 import { ScoreModel } from './score.model';
 import { PlayerService } from './player.service';
-import {PlayerModel} from "./player.model";
+import {Player} from "./player";
+import {UserService} from "./aaauser.service";
 
 @Component({
   selector: 'app-header',
@@ -15,19 +16,26 @@ export class HeaderComponent implements OnInit {
   // constructor(private http: HttpClient) { }
   scoreData: ScoreModel;
 
-  players: PlayerModel[] = []; // pole pro ukládání dat hráčů
+  players: Player[] = []; // pole pro ukládání dat hráčů
 
   @ViewChild('myModal') modal!: ElementRef;
 
-  constructor(private scoreService: ScoreService, private playerService: PlayerService) {
+  constructor(private scoreService: ScoreService, private playerService: PlayerService, private userService: UserService) {
     this.scoreData = this.scoreService.getScoreData();
   }
-  // spustí se po konstruktoru
+
   ngOnInit() {
-    // Tento cyklus se spouští pouze jednou po konstrukci komponenty a při prvním renderování na obrazovku
-    // Při inicializaci komponenty získáme skóre z backendu
-    // this.getScoreFromBackend();
+    this.userService.findAll().subscribe(data => {
+      this.players = data;
+    });
   }
+
+  // spustí se po konstruktoru
+  // ngOnInit() {
+  //   // Tento cyklus se spouští pouze jednou po konstrukci komponenty a při prvním renderování na obrazovku
+  //   // Při inicializaci komponenty získáme skóre z backendu
+  //   // this.getScoreFromBackend();
+  // }
 
   @HostListener('document:click', ['$event'])
   onClickGetScore(event: MouseEvent) {
@@ -106,7 +114,7 @@ export class HeaderComponent implements OnInit {
   loadPlayersData() {
     // Zavoláme službu pro načtení dat hráčů
     this.playerService.getPlayers().subscribe(
-      (players: PlayerModel[]) => {
+      (players: Player[]) => {
         this.players = players; // Uložíme načtená data do pole players
       },
       (error: any) => {
