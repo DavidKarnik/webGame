@@ -4,42 +4,45 @@ import main.webgame.PlayerRepository;
 import main.webgame.model.Player;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
 //@RequestMapping("/api") // prefix need to add to the WebSecurityConfig.java
+@CrossOrigin(origins = "http://localhost:4200") // allow Cross-Origin Resource Sharing (CORS) on the serve ... different ports
 public class LeaderboardController {
 
     @Autowired
     PlayerRepository playerRepository;
 
-    /**
-     * Load the main page
-     * @return - index page
-     */
-    @GetMapping("")
-    public String viewHomePage() {
-        return "index";
+    @GetMapping("/users")
+    public List<Player> getUsers() {
+        return playerRepository.findAll();
     }
 
-    /**
-     * Load Leaderboard
-     * @return - Array of Player[]
-     */
-    @GetMapping("/save")
-    public String saveDebugging() {
-        Player plr = new Player("Player1",123);
-        playerRepository.save(new Player("Player1",123));
-//        return null;
-        return "index";
+    @PostMapping("/users")
+    void addPlayer(@RequestBody Player _player) {
+        playerRepository.save(_player);
     }
-
+    
     @GetMapping("/leaderboard")
     public List<Player> showLeaderboard() {
         return playerRepository.findAll();
     }
+
+    //    @GetMapping("")
+//    public String viewHomePage() {
+//        return "index";
+//    }
+
+
+//    @GetMapping("/save")
+//    public String saveDebugging() {
+//        Player plr = new Player("Player1",123);
+//        playerRepository.save(new Player("Player1",123));
+////        return null;
+//        return "index";
+//    }
 
 }
