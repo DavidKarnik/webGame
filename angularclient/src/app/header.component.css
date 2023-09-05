@@ -102,3 +102,38 @@ header {
   text-decoration: none;
   cursor: pointer;
 }
+
+/* Styl pro tabulku */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+/* Styl pro řádky tabulky */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Styl pro nadpisy v modálním okně */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styl pro zavření modálního okna na mobilních zařízeních */
+@media screen and (max-width: 600px) {
+  .close {
+    font-size: 18px;
+  }
+}

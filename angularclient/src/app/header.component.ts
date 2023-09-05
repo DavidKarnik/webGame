@@ -2,9 +2,8 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
 import { HttpClient } from '@angular/common/http';
 import { ScoreService } from './score.service';
 import { ScoreModel } from './score.model';
-import { PlayerService } from './player.service';
 import {Player} from "./player";
-import {UserService} from "./aaauser.service";
+import {UserService} from "./aaaUser.service";
 
 @Component({
   selector: 'app-header',
@@ -20,22 +19,18 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('myModal') modal!: ElementRef;
 
-  constructor(private scoreService: ScoreService, private playerService: PlayerService, private userService: UserService) {
+  constructor(private scoreService: ScoreService, private userService: UserService) {
     this.scoreData = this.scoreService.getScoreData();
   }
 
+  // spustí se po konstruktoru
   ngOnInit() {
+    // Tento cyklus se spouští pouze jednou po konstrukci komponenty a při prvním renderování na obrazovku
+    // Při inicializaci komponenty získáme skóre z backendu
     this.userService.findAll().subscribe(data => {
       this.players = data;
     });
   }
-
-  // spustí se po konstruktoru
-  // ngOnInit() {
-  //   // Tento cyklus se spouští pouze jednou po konstrukci komponenty a při prvním renderování na obrazovku
-  //   // Při inicializaci komponenty získáme skóre z backendu
-  //   // this.getScoreFromBackend();
-  // }
 
   @HostListener('document:click', ['$event'])
   onClickGetScore(event: MouseEvent) {
@@ -43,18 +38,6 @@ export class HeaderComponent implements OnInit {
     this.scoreData = this.scoreService.getScoreData();
     // this.score = this.scoreData.score;
     // this.miss = this.scoreData.misses;
-  }
-
-  // Metoda pro získání skóre z backendu
-  getScoreFromBackend() {
-    // this.http.get<number>('/api/score').subscribe(
-    //   (score) => {
-    //     this.score = score;
-    //   },
-    //   (error) => {
-    //     console.error('Chyba při získávání skóre: ', error);
-    //   }
-    // );
   }
 
   targetClick() {
@@ -67,14 +50,6 @@ export class HeaderComponent implements OnInit {
 
   // Metoda pro resetování skóre na nulu
   reset() {
-    // this.http.put<void>('/api/score', 0).subscribe(
-    //   () => {
-    //     this.score = 0;
-    //   },
-    //   (error) => {
-    //     console.error('Chyba při resetování skóre: ', error);
-    //   }
-    // );
     // reset ScoreService values
     this.scoreService.reset();
   }
@@ -108,31 +83,4 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Load players[] from PLayerService
-   */
-  loadPlayersData() {
-    // Zavoláme službu pro načtení dat hráčů
-    this.playerService.getPlayers().subscribe(
-      (players: Player[]) => {
-        this.players = players; // Uložíme načtená data do pole players
-      },
-      (error: any) => {
-        console.error('Chyba při načítání dat hráčů: ', error);
-      }
-    );
-
-    // this.players = this.playerService.getUsers();
-
-    // const playersResponse = await this.playerService.getUsers();
-    this.playerService.getUsers()
-      .then((playersResponse) => {
-        // const playersArray = playersResponse.data;
-        const playersArray = playersResponse;
-        console.log(playersArray);
-      })
-      .catch((error) => {
-        console.error('Chyba:', error);
-      });
-  }
 }
