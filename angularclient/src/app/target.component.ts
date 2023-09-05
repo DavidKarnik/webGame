@@ -25,7 +25,7 @@ export class TargetComponent {
 
 
   /**
-   * Calls when click on window, target clicked ?
+   * Calls when click on window, target clicked check and move target
    * @param event
    */
   @HostListener('document:click', ['$event'])

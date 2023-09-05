@@ -2,7 +2,7 @@ import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/c
 import { HttpClient } from '@angular/common/http';
 import { ScoreService } from './score.service';
 import { ScoreModel } from './score.model';
-import {Player} from "./player";
+import {PlayerModel} from "./player.model";
 import {UserService} from "./aaaUser.service";
 
 @Component({
@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   // constructor(private http: HttpClient) { }
   scoreData: ScoreModel;
 
-  players: Player[] = []; // pole pro ukládání dat hráčů
+  players: PlayerModel[] = []; // pole pro ukládání dat hráčů
 
   @ViewChild('myModal') modal!: ElementRef;
 
