@@ -24,6 +24,10 @@ export class TargetComponent {
   }
 
 
+  /**
+   * Calls when click on window, target clicked ?
+   * @param event
+   */
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     // Browser window
@@ -55,15 +59,14 @@ export class TargetComponent {
       } else {
         // Kliknutí mimo terč
         this.onMiss();
-        this.moveTarget();
       }
+      this.moveTarget(); // Při kliknutí se terč přesune na novou pozici
     }
   }
 
   onClickTarget() {
     this.score += 1;
     this.scoreService.incrementScore(1);
-    this.moveTarget(); // Při kliknutí na terč se přesune na novou pozici
   }
 
   onMiss() {

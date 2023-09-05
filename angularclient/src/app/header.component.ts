@@ -34,10 +34,9 @@ export class HeaderComponent implements OnInit {
 
   @HostListener('document:click', ['$event'])
   onClickGetScore(event: MouseEvent) {
-    // on every click refresh score
+    // on every click REFRESH score
     this.scoreData = this.scoreService.getScoreData();
-    // this.score = this.scoreData.score;
-    // this.miss = this.scoreData.misses;
+    // console.log("onClickGetScore(event: MouseEvent) called")
   }
 
   targetClick() {
