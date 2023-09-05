@@ -17,12 +17,13 @@ public class LeaderboardController {
     PlayerRepository playerRepository;
 
     @GetMapping("/users")
-    @ResponseBody
+    @ResponseBody // Tím řeknete Springu, že výsledkem metody by měla být data a ne šablona
     public List<Player> getUsers() {
         return (List<Player>) playerRepository.findAll();
     }
 
     @PostMapping("/users")
+    @ResponseBody
     void addPlayer(@RequestBody Player _player) {
         playerRepository.save(_player);
     }
@@ -30,7 +31,7 @@ public class LeaderboardController {
     @GetMapping("/leaderboard")
     @ResponseBody
     public List<Player> showLeaderboard() {
-        return playerRepository.findAll();
+        return playerRepository.findTop10ByScoreDesc();
     }
 
     //    @GetMapping("")
