@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { ScoreService } from './score.service';
 import { ScoreModel } from './score.model';
 import {PlayerModel} from "./player.model";
-import {UserService} from "./aaaUser.service";
+import {PlayerService} from "./player.service";
 
 @Component({
   selector: 'app-header',
@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('myModal') modal!: ElementRef;
 
-  constructor(private scoreService: ScoreService, private userService: UserService) {
+  constructor(private scoreService: ScoreService, private playerService: PlayerService) {
     this.scoreData = this.scoreService.getScoreData();
   }
 
@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     // Tento cyklus se spouští pouze jednou po konstrukci komponenty a při prvním renderování na obrazovku
     // Při inicializaci komponenty získáme skóre z backendu
-    this.userService.findAll().subscribe(data => {
+    this.playerService.findAll().subscribe(data => {
       this.players = data;
     });
   }

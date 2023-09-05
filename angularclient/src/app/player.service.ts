@@ -6,20 +6,20 @@ import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class PlayerService {
 
-  private usersUrl: string;
+  private playersURL: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = 'http://localhost:8080/leaderboard';
-    // this.usersUrl = 'http://localhost:8080/users';
+    this.playersURL = 'http://localhost:8080/leaderboard';
+    // this.playersURL = 'http://localhost:8080/users';
   }
 
   public findAll(): Observable<PlayerModel[]> {
-    return this.http.get<PlayerModel[]>(this.usersUrl);
+    return this.http.get<PlayerModel[]>(this.playersURL);
   }
 
   public save(user: PlayerModel) {
-    return this.http.post<PlayerModel>(this.usersUrl, user);
+    return this.http.post<PlayerModel>(this.playersURL, user);
   }
 }
