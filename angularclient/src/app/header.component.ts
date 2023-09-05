@@ -1,7 +1,6 @@
 import {Component, ElementRef, HostListener, OnInit, ViewChild} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ScoreService } from './score.service';
-import { ScoreModel } from './score.model';
+import {ScoreService} from './score.service';
+import {ScoreModel} from './score.model';
 import {PlayerModel} from "./player.model";
 import {PlayerService} from "./player.service";
 
@@ -12,7 +11,6 @@ import {PlayerService} from "./player.service";
 })
 export class HeaderComponent implements OnInit {
 
-  // constructor(private http: HttpClient) { }
   scoreData: ScoreModel;
 
   players: PlayerModel[] = []; // pole pro ukládání dat hráčů
@@ -27,6 +25,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     // Tento cyklus se spouští pouze jednou po konstrukci komponenty a při prvním renderování na obrazovku
     // Při inicializaci komponenty získáme skóre z backendu
+    // .subscribe() -> slouží k sledování změn v toku událostí nebo dat, které emituje Observable, refresh je vždy,
+    // když se změní hodnota v this.playerService.findAll()
     this.playerService.findAll().subscribe(data => {
       this.players = data;
     });
@@ -60,7 +60,15 @@ export class HeaderComponent implements OnInit {
     if (this.modal) {
       this.modal.nativeElement.style.display = "block";
     }
+    // this.loadLeaderboardFromDatabase();
   }
+
+  // loadLeaderboardFromDatabase() {
+  //   // load leaderboard data from mySQL
+  //   this.playerService.findAll().subscribe(data => {
+  //     this.players = data;
+  //   });
+  // }
 
   /**
    * Just close modal Leaderboard
@@ -77,6 +85,7 @@ export class HeaderComponent implements OnInit {
    */
   onOutsideClick(event: MouseEvent) {
     console.log(`onOutsideClick() run`)
+    // when outside modal is clicked or close modal cross button
     if (this.modal && event.target === this.modal.nativeElement) {
       this.modal.nativeElement.style.display = "none";
     }
