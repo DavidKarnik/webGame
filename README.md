@@ -1,6 +1,6 @@
 # Web Game Project
 
-Just for learn TypeScript, Angular and comunication Frontend <-> Backend (Java - Spring). Project of simple Web Game. Event click on targets to Score/Miss. Project is implemented with several tools, IDEs and languages so there is little mess in files atm.
+Just for learn TypeScript, Angular and comunication Frontend <-> Backend (Java - Spring) <-> MySQL database. Project of simple Web Game. Event click on targets to Score/Miss. Project is implemented with several tools, IDEs and languages so there is little mess in files atm.
 
 # Main Idea
 Simple web game (click on target to get point). <- Frontend, Backend -> Send data to Java Spring boot and manage them. Store them into DATABASE and send Leaderboard to the Frontend.
