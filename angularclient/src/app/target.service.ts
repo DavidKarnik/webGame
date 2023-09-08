@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
+// class for injeting and share same data between multiple components
 @Injectable({
   providedIn: 'root',
 })
 export class TargetService {
   maxX = window.innerWidth; // Maximální hodnota pro souřadnici x
   maxY = window.innerHeight; // Maximální hodnota pro souřadnici y
-  // private headerSize: number;
-  // private offsetTarget: number = 30;
+
   private targetPosition = {x: (this.maxX/2), y: (this.maxY/2)}; // Počáteční pozice terče
 
   setTargetPosition(x: number, y: number) {

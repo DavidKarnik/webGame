@@ -8,6 +8,8 @@ import {TargetComponent} from "./target.component";
 
 import { TargetService } from './target.service';
 
+import {FormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import { TargetService } from './target.service';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule // Aby bylo možné vstupní pole vázat na proměnnou v komponentě, musíte importovat FormsModule (textBox)
   ],
   // Služby registrované v sekci providers v modulu jsou v Angularu výchozím způsobem jedinou instancí (singleton)
   // pro celý modul. To znamená, že všechny komponenty a služby v rámci modulu budou sdílet jednu instanci této služby.

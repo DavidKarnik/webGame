@@ -18,6 +18,8 @@ export class HeaderComponent implements OnInit {
 
   players: PlayerModel[] = []; // pole pro ukládání dat hráčů
 
+  nickname: string = ''; // Inicializace proměnné pro nickname
+
   @ViewChild('myModal') modal!: ElementRef;
 
   constructor(private scoreService: ScoreService, private playerService: PlayerService, private targetService: TargetService) {
@@ -55,6 +57,7 @@ export class HeaderComponent implements OnInit {
     // reset ScoreService values
     this.scoreService.reset();
     this.targetService.setTargetPositionToCenter(); // center target
+    // console.log(this.nickname);
   }
 
   // Metoda pro zobrazení tabulky s nejlepšími skóre (leaderboard)
