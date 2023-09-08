@@ -1,5 +1,8 @@
 import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {ScoreService} from './score.service';
+import { TargetService } from './target.service';
+
+const max = 1;
 
 @Component({
   selector: 'app-target',
@@ -20,7 +23,8 @@ export class TargetComponent {
 
   targetPosition = {x: (this.maxX/2), y: (this.maxY/2)}; // Počáteční pozice terče
 
-  constructor(private scoreService: ScoreService) {
+  constructor(private scoreService: ScoreService, private targetService: TargetService) {
+    this.targetPosition = targetService.getTargetPosition();
   }
 
 
@@ -103,10 +107,13 @@ export class TargetComponent {
       newTargetY = (this.maxY - this.offsetTarget - headerSize - 5);
     }
 
+    // logika
+    this.targetService.setTargetPosition(newTargetX, newTargetY);
 
     // Přesuneme terč na novou pozici
-    this.targetPosition.x = newTargetX;
-    this.targetPosition.y = newTargetY;
+    // this.targetPosition.x = newTargetX;
+    // this.targetPosition.y = newTargetY;
+    this.targetPosition = this.targetService.getTargetPosition();
     // console.log(`target x = ${newTargetX} y = ${newTargetY}`);
     // console.log(`newTargetX: ${newTargetX}`);
     // console.log(`newTargetY: ${newTargetY}`);
