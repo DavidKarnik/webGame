@@ -39,13 +39,4 @@ public class LeaderboardController {
 //        return "index";
 //    }
 
-
-//    @GetMapping("/save")
-//    public String saveDebugging() {
-//        Player plr = new Player("Player1",123);
-//        playerRepository.save(new Player("Player1",123));
-////        return null;
-//        return "index";
-//    }
-
 }

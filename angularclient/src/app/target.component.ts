@@ -18,7 +18,7 @@ export class TargetComponent {
   // size of target (radius)
   offsetTarget = 30;
 
-  targetPosition = {x: 100, y: 100}; // Počáteční pozice terče
+  targetPosition = {x: (this.maxX/2), y: (this.maxY/2)}; // Počáteční pozice terče
 
   constructor(private scoreService: ScoreService) {
   }
