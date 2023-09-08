@@ -24,8 +24,8 @@ public class WebGameApplication {
     @Bean
     CommandLineRunner init(PlayerRepository playerRepository) {
         return args -> {
-            Stream.of("John", "Julie", "Jennifer", "Helen", "Rachel").forEach(name -> {
-                Player user = new Player(name, (int) (Math.random() * 10));
+            Stream.of("Adam", "Adel", "Jennifer", "Peter", "Daniel").forEach(name -> {
+                Player user = new Player(name, (int) (Math.random() * 10)); // Math.random() => 0.0 - 1.0
                 playerRepository.save(user);
             });
             List<Player> list = playerRepository.findAll();

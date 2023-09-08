@@ -22,7 +22,7 @@ public class LeaderboardController {
         return (List<Player>) playerRepository.findAll();
     }
 
-    @PostMapping("/users")
+    @PostMapping("/save")
     @ResponseBody
     void addPlayer(@RequestBody Player _player) {
         playerRepository.save(_player);
