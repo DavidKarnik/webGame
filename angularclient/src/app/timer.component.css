@@ -1,0 +1,10 @@
+.timer {
+  float: right; /* Umištění vpravo */
+  margin-right: 20px; /* Vzdálenost od pravého okraje */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.time-left {
+  color: #ff5733; /* Barva času */
+}

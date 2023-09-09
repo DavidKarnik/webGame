@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {TargetComponent} from "./target.component";
+import {TimerComponent} from "./timer.component";
 
 import { TargetService } from './target.service';
 
@@ -15,7 +16,8 @@ import {FormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     HeaderComponent,
-    TargetComponent
+    TargetComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
