@@ -8,11 +8,12 @@ import {TimerService} from "./timer.service";
   styleUrls: ['./timer.component.css'],
 })
 export class TimerComponent implements OnInit{
-  timeLeft: string; // Počáteční čas
+  // timeLeft: string; // Počáteční čas
   timer: any;
 
-  constructor(private timerService:TimerService) {
-    this.timeLeft = this.timerService.getTime();
+  constructor(public timerService:TimerService) {
+    // public timerService kvůli využití v timer.component.html
+    // this.timeLeft = this.timerService.getTime();
     // this.timer.startTimer();
   }
 
@@ -23,7 +24,7 @@ export class TimerComponent implements OnInit{
   startTimer() {
     this.timerService.setRunningInfoTo(true);
     this.timer = setInterval(() => {
-      const timeArray = this.timeLeft.split(':');
+      const timeArray = this.timerService.getTime().split(':');
       let minutes = +timeArray[0];
       let seconds = +timeArray[1];
 
@@ -40,7 +41,7 @@ export class TimerComponent implements OnInit{
           seconds--;
         }
 
-        this.timeLeft = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        this.timerService.setTime(`${minutes}:${seconds < 10 ? '0' : ''}${seconds}`);
       }
     }, 1000);
   }

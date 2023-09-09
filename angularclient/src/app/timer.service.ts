@@ -5,7 +5,8 @@ import {Injectable} from "@angular/core";
   providedIn: 'root'
 })
 export class TimerService {
-  timeLeft: string = '0:30'; // Počáteční čas
+  myTime = '0:30'; // Počáteční čas
+  timeLeft: string = this.myTime; // Zbývající čas
   running: boolean = false;
 
   sendScoreToBackend() {
@@ -23,5 +24,9 @@ export class TimerService {
 
   setRunningInfoTo(_running: boolean) {
     this.running = _running;
+  }
+
+  resetTimer() {
+    this.timeLeft = this.myTime;
   }
 }

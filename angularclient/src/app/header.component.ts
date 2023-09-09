@@ -5,7 +5,10 @@ import {ScoreModel} from './score.model';
 import {PlayerModel} from "./player.model";
 import {PlayerService} from "./player.service";
 
-import { TargetService } from './target.service';
+import {TargetService} from './target.service';
+
+import {TimerService} from './timer.service';
+
 
 @Component({
   selector: 'app-header',
@@ -22,7 +25,10 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('myModal') modal!: ElementRef;
 
-  constructor(private scoreService: ScoreService, private playerService: PlayerService, private targetService: TargetService) {
+  constructor(private scoreService: ScoreService,
+              private playerService: PlayerService,
+              private targetService: TargetService,
+              private timerService: TimerService) {
     this.scoreData = this.scoreService.getScoreData();
   }
 
@@ -57,6 +63,7 @@ export class HeaderComponent implements OnInit {
     // reset ScoreService values
     this.scoreService.reset();
     this.targetService.setTargetPositionToCenter(); // center target
+    this.timerService.resetTimer();
     // console.log(this.nickname);
   }
 
