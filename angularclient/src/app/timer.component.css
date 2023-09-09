@@ -1,6 +1,6 @@
 .timer {
   float: right; /* Umištění vpravo */
-  margin-right: 20px; /* Vzdálenost od pravého okraje */
+  margin: 20px 20px 0 0; /* Vzdálenost od pravého okraje */
   font-size: 24px;
   font-weight: bold;
 }
