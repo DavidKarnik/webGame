@@ -2,6 +2,8 @@ import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {ScoreService} from './score.service';
 import { TargetService } from './target.service';
 
+import {TimerService} from "./timer.service";
+
 const max = 1;
 
 @Component({
@@ -23,7 +25,9 @@ export class TargetComponent {
 
   targetPosition = {x: (this.maxX/2), y: (this.maxY/2)}; // Počáteční pozice terče
 
-  constructor(private scoreService: ScoreService, private targetService: TargetService) {
+  constructor(private scoreService: ScoreService,
+              private targetService: TargetService,
+              private timerService: TimerService) {
     this.targetPosition = targetService.getTargetPosition();
   }
 
@@ -69,6 +73,15 @@ export class TargetComponent {
   }
 
   onClickTarget() {
+    // console.log('score' + this.score);
+    // console.log('scoreService' + this.scoreService.getScoreData().score);
+
+    // only when starting new game
+    if(this.scoreService.getScoreData().score == 0) {
+      this.timerService.setRunningInfoTo(0); // starting
+      // console.log('onClickTarget()' + ', this.timerService.setRunningInfoTo(0)' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())
+    }
+
     this.score += 1;
     this.scoreService.incrementScore(1);
   }

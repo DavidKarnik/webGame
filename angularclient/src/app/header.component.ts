@@ -64,7 +64,7 @@ export class HeaderComponent implements OnInit {
     this.scoreService.reset();
     this.targetService.setTargetPositionToCenter(); // center target
     this.timerService.resetTimer();
-    // console.log(this.nickname);
+    // console.log('reset()' + ', this.timerService.resetTimer()');
   }
 
   // Metoda pro zobrazení tabulky s nejlepšími skóre (leaderboard)

@@ -7,7 +7,10 @@ import {Injectable} from "@angular/core";
 export class TimerService {
   myTime = '0:30'; // Počáteční čas
   timeLeft: string = this.myTime; // Zbývající čas
-  running: boolean = false;
+  // 0 -> stopped, waiting for start
+  // 1 -> running atm
+  // 2 -> stopped by timer end, timer == 00:00
+  running: number = 0;
 
   sendScoreToBackend() {
     // Zde můžete implementovat logiku pro odeslání skóre na backend
@@ -22,11 +25,17 @@ export class TimerService {
     return this.timeLeft;
   }
 
-  setRunningInfoTo(_running: boolean) {
+  resetTimer() {
+    this.timeLeft = this.myTime;
+    this.setRunningInfoTo(2); // zastaveno resetem
+    // console.log('resetTimer()' + ', this.setRunningInfoTo(2)' + ', this.getRunningInfo() == ' + this.getRunningInfo())
+  }
+
+  setRunningInfoTo(_running: number) {
     this.running = _running;
   }
 
-  resetTimer() {
-    this.timeLeft = this.myTime;
+  getRunningInfo() {
+    return this.running;
   }
 }
