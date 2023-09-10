@@ -34,6 +34,28 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 ![App Screenshot](https://via.placeholder.com/700x100?text=Not+Added+Yet)
 
+## MySQL Database
+
+#### Get all players
+
+```http
+  GET /api/players
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `BIGINT` | **Required**. Player key |
+| `nickname` | `VARCHAR` | Player nickname |
+| `score` | `INT` | Player score |
+
+#### Get leaderboard (Top 10 players)
+
+```http
+  GET /api/leaderboard
+```
+
+SELECT * FROM databaseName ORDER BY score DESC LIMIT 10
+
 
 
 
