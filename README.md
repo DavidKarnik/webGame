@@ -1,3 +1,35 @@
+## Used Tools and Languages
+
+#### Frontend
+- [TypeScript](https://www.typescriptlang.org/)
+- [HTML, CSS](https://html.com/)
+- [WebStorm](https://www.jetbrains.com/webstorm/)
+#### Backend
+- [Java](https://www.java.com/en/)
+- [Spring Boot](https://spring.io/projects/spring-boot)
+- [Maven](https://maven.apache.org/)
+- [Postman](https://www.postman.com/)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+#### Database
+- [MySQL](https://www.mysql.com/)
+- [MySQL Workbench](https://www.mysql.com/products/workbench/)
+#### Cloud hosting/ Deployment
+- [AWS](https://aws.amazon.com/)
+- [Ubuntu](https://ubuntu.com/aws)
+- [Docker](https://www.docker.com/)
+#### Git
+- [Git](https://git-scm.com/)
+- [Git Bash](https://gitforwindows.org/)
+- [GitHub](https://github.com/)
+- [GitHub Actions](https://github.com/features/actions)
+
+
+
+
+
+
+
+
 # Web Game Project
 
 Just for learn TypeScript, Angular and comunication Frontend <-> Backend (Java - Spring) <-> MySQL database. Project of simple Web Game. Event click on targets to Score/Miss. Project is implemented with several tools, IDEs and languages so there is little mess in files atm.
