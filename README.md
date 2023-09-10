@@ -7,6 +7,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 ## Used Tools and Languages
 
+<!--
 #### Frontend
 - [TypeScript](https://www.typescriptlang.org/)
 - [HTML, CSS](https://html.com/)
@@ -33,6 +34,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - Jacoco
 - SonarCloud
 - Karma
+-->
 
 <div align="center">
 
