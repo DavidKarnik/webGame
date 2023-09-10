@@ -39,7 +39,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 <table>
   <tr>
-    <td>
+    <td style="border-right: 1px solid transparent; padding-right: 20px;">
 
 #### Frontend
 - [TypeScript](https://www.typescriptlang.org/)
@@ -54,7 +54,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
     </td>
-    <td>
+    <td style="padding-left: 20px;">
 
 #### Database
 - [MySQL](https://www.mysql.com/)
@@ -64,6 +64,9 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - [AWS](https://aws.amazon.com/)
 - [Ubuntu](https://ubuntu.com/aws)
 - [Docker](https://www.docker.com/)
+
+</td>
+<td style="padding-left: 20px;">
 
 #### Git
 - [Git](https://git-scm.com/)
@@ -79,6 +82,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
     </td>
   </tr>
 </table>
+
 
 
 ## Screenshots
