@@ -6,7 +6,7 @@ Project of simple clicking web game with a database and separate frontend and ba
 Load main page with score == 0, blank nickname textbox, time set to 10 seconds and svg target in the middle. When target is clicked start time t=10 until t=0 and save nickname to temporary variable. If player click in target radius, add score++. When miss-click target do miss++. After every click change target position. When t=0 stop game, show results (modal), send data to backend, do logic and store them into the MySQL database. Restart.
 
 ## Used Tools and Languages
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px;">
   
 #### Frontend
 - [TypeScript](https://www.typescriptlang.org/)
