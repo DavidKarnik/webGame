@@ -56,7 +56,19 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 SELECT * FROM databaseName ORDER BY score DESC LIMIT 10
 
+## Running Tests
 
+To run unit tests for frontend via [Karma](https://karma-runner.github.io), run the following command
+
+```bash
+  ng test
+```
+
+To run tests for backend and generate test coverage report from [jacoco](https://www.jacoco.org/jacoco/trunk/index.html), run the following command
+
+```bash
+  mvn clean test
+```
 
 
 
