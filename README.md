@@ -37,6 +37,44 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 </div>
 
+| Name     | Character |
+| ---      | ---       |
+| Backtick | `         |
+| Pipe     | \|        |
+
+
+| #### Frontend | #### Backend | #### Database | #### Cloud hosting/ Deployment | #### Git | #### Tests |
+| [TypeScript](https://www.typescriptlang.org/) | [Java](https://www.java.com/en/) | [MySQL](https://www.mysql.com/) | [AWS](https://aws.amazon.com/) | [Git](https://git-scm.com/) | Jacoco |
+| [HTML, CSS](https://html.com/) | [Spring Boot](https://spring.io/projects/spring-boot) | [MySQL Workbench](https://www.mysql.com/products/workbench/) | [Ubuntu](https://ubuntu.com/aws) | [Git Bash](https://gitforwindows.org/) | SonarCloud |
+| [WebStorm](https://www.jetbrains.com/webstorm/) | [Maven](https://maven.apache.org/) | x | [Docker](https://www.docker.com/) | [GitHub](https://github.com/) | Karma |
+| x | [IntelliJ IDEA](https://www.jetbrains.com/idea/) | x | x | [GitHub Actions](https://github.com/features/actions) | x |
+- 
+- 
+- 
+- 
+- 
+
+- 
+- 
+
+- 
+- 
+- 
+
+- 
+- 
+- 
+- 
+
+- 
+- 
+- 
+
+
+
+
+
+
 <table align="center">
   <tr>
     <td style="padding-top: 0px;">
