@@ -39,12 +39,15 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 <table>
   <tr>
-    <td style="border-right: 1px solid transparent; padding-right: 20px;">
+    <td>
 
 #### Frontend
 - [TypeScript](https://www.typescriptlang.org/)
 - [HTML, CSS](https://html.com/)
 - [WebStorm](https://www.jetbrains.com/webstorm/)
+
+    </td>
+    <td>
 
 #### Backend
 - [Java](https://www.java.com/en/)
@@ -54,25 +57,35 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
     </td>
-    <td style="padding-left: 20px;">
+  </tr>
+  <tr>
+    <td>
 
 #### Database
 - [MySQL](https://www.mysql.com/)
 - [MySQL Workbench](https://www.mysql.com/products/workbench/)
+
+    </td>
+    <td>
 
 #### Cloud hosting/ Deployment
 - [AWS](https://aws.amazon.com/)
 - [Ubuntu](https://ubuntu.com/aws)
 - [Docker](https://www.docker.com/)
 
-</td>
-<td style="padding-left: 20px;">
+    </td>
+  </tr>
+  <tr>
+    <td>
 
 #### Git
 - [Git](https://git-scm.com/)
 - [Git Bash](https://gitforwindows.org/)
 - [GitHub](https://github.com/)
 - [GitHub Actions](https://github.com/features/actions/)
+
+    </td>
+    <td>
 
 #### Tests
 - Jacoco
@@ -82,6 +95,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
     </td>
   </tr>
 </table>
+
 
 
 
