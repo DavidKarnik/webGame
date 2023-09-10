@@ -43,7 +43,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 | Pipe     | \|        |
 
 
-| #### Frontend | #### Backend | #### Database | #### Cloud hosting/ Deployment | #### Git | #### Tests |
+| Frontend | Backend | Database | Cloud hosting/ Deployment | Git | Tests |
 | --- | --- | --- | --- | --- | --- |
 | [TypeScript](https://www.typescriptlang.org/) | [Java](https://www.java.com/en/) | [MySQL](https://www.mysql.com/) | [AWS](https://aws.amazon.com/) | [Git](https://git-scm.com/) | Jacoco |
 | [HTML, CSS](https://html.com/) | [Spring Boot](https://spring.io/projects/spring-boot) | [MySQL Workbench](https://www.mysql.com/products/workbench/) | [Ubuntu](https://ubuntu.com/aws) | [Git Bash](https://gitforwindows.org/) | SonarCloud |
