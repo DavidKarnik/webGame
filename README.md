@@ -73,11 +73,11 @@ To run tests for backend and generate test coverage report from [jacoco](https:/
 ## Deployment
 
 #### Frontend
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files. <br>
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 #### Backend
-Run `mvn package` in /webGame/webGame/ directory for build the project (/xxxFileName-0.0.x-SNAPSHOT.jar)
+Run `mvn package` in /webGame/webGame/ directory for build the project (/xxxFileName-0.0.x-SNAPSHOT.jar) <br>
 Run `java -jar /xxxFileName-0.0.x-SNAPSHOT.jar` for start application server. Navigate to `http://localhost:8080/`.
 
 #### All-in-One
