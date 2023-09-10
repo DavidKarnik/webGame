@@ -41,9 +41,9 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 | Frontend | Backend | Database | Cloud hosting/ Deployment | Git | Tests |
 | --- | --- | --- | --- | --- | --- |
-| [TypeScript](https://www.typescriptlang.org/) | [Java](https://www.java.com/en/) | [MySQL](https://www.mysql.com/) | [AWS](https://aws.amazon.com/) | [Git](https://git-scm.com/) | Jacoco |
-| [HTML, CSS](https://html.com/) | [Spring Boot](https://spring.io/projects/spring-boot) | [MySQL Workbench](https://www.mysql.com/products/workbench/) | [Ubuntu](https://ubuntu.com/aws) | [Git Bash](https://gitforwindows.org/) | SonarCloud |
-| [WebStorm](https://www.jetbrains.com/webstorm/) | [Maven](https://maven.apache.org/) |  | [Docker](https://www.docker.com/) | [GitHub](https://github.com/) | Karma |
+| [TypeScript](https://www.typescriptlang.org/) | [Java](https://www.java.com/en/) | [MySQL](https://www.mysql.com/) | [AWS](https://aws.amazon.com/) | [Git](https://git-scm.com/) | [Jacoco](https://www.jacoco.org/jacoco/trunk/index.html) |
+| [HTML, CSS](https://html.com/) | [Spring Boot](https://spring.io/projects/spring-boot) | [MySQL Workbench](https://www.mysql.com/products/workbench/) | [Ubuntu](https://ubuntu.com/aws) | [Git Bash](https://gitforwindows.org/) | [SonarCloud](https://www.sonarsource.com/products/sonarcloud/) |
+| [WebStorm](https://www.jetbrains.com/webstorm/) | [Maven](https://maven.apache.org/) |  | [Docker](https://www.docker.com/) | [GitHub](https://github.com/) | [Karma](https://karma-runner.github.io/latest/index.html) |
 |  | [IntelliJ IDEA](https://www.jetbrains.com/idea/) |  |  | [GitHub Actions](https://github.com/features/actions) |  |
 
 </div>
