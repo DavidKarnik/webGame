@@ -30,6 +30,10 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - [GitHub](https://github.com/)
 - [GitHub Actions](https://github.com/features/actions)
 
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/700x100?text=Not+Added+Yet)
+
 
 
 
