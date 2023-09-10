@@ -37,6 +37,50 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 </div>
 
+<table>
+  <tr>
+    <td>
+
+#### Frontend
+- [TypeScript](https://www.typescriptlang.org/)
+- [HTML, CSS](https://html.com/)
+- [WebStorm](https://www.jetbrains.com/webstorm/)
+
+#### Backend
+- [Java](https://www.java.com/en/)
+- [Spring Boot](https://spring.io/projects/spring-boot/)
+- [Maven](https://maven.apache.org/)
+- [Postman](https://www.postman.com/)
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
+
+    </td>
+    <td>
+
+#### Database
+- [MySQL](https://www.mysql.com/)
+- [MySQL Workbench](https://www.mysql.com/products/workbench/)
+
+#### Cloud hosting/ Deployment
+- [AWS](https://aws.amazon.com/)
+- [Ubuntu](https://ubuntu.com/aws)
+- [Docker](https://www.docker.com/)
+
+#### Git
+- [Git](https://git-scm.com/)
+- [Git Bash](https://gitforwindows.org/)
+- [GitHub](https://github.com/)
+- [GitHub Actions](https://github.com/features/actions/)
+
+#### Tests
+- Jacoco
+- SonarCloud
+- Karma
+
+    </td>
+  </tr>
+</table>
+
+
 ## Screenshots
 
 ![App Screenshot](https://via.placeholder.com/700x100?text=Not+Added+Yet)
