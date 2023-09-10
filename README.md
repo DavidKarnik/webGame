@@ -70,6 +70,13 @@ To run tests for backend and generate test coverage report from [jacoco](https:/
   mvn clean test
 ```
 
+## Deployment
+
+Using [Docker](https://www.docker.com/) for automated deployment. To deploy this project run
+
+```bash
+  *not implemented yet*
+```
 
 
 
