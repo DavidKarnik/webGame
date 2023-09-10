@@ -57,8 +57,6 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - [IntelliJ IDEA](https://www.jetbrains.com/idea/)
 
     </td>
-  </tr>
-  <tr>
     <td>
 
 #### Database
@@ -66,6 +64,8 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - [MySQL Workbench](https://www.mysql.com/products/workbench/)
 
     </td>
+    </tr>
+    <tr>
     <td>
 
 #### Cloud hosting/ Deployment
