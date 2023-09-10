@@ -37,9 +37,9 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 </div>
 
-<table>
+<table align="center">
   <tr>
-    <td style="padding-top: 20px;">
+    <td style="padding-top: 0px;">
 
 #### Frontend
 - [TypeScript](https://www.typescriptlang.org/)
