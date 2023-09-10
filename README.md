@@ -6,8 +6,7 @@ Project of simple clicking web game with a database and separate frontend and ba
 Load main page with score == 0, blank nickname textbox, time set to 10 seconds and svg target in the middle. When target is clicked start time t=10 until t=0 and save nickname to temporary variable. If player click in target radius, add score++. When miss-click target do miss++. After every click change target position. When t=0 stop game, show results (modal), send data to backend, do logic and store them into the MySQL database. Restart.
 
 ## Used Tools and Languages
-<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 5px;">
-  
+
 #### Frontend
 - [TypeScript](https://www.typescriptlang.org/)
 - [HTML, CSS](https://html.com/)
@@ -35,107 +34,16 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - SonarCloud
 - Karma
 
-</div>
-
-| Name     | Character |
-| ---      | ---       |
-| Backtick | `         |
-| Pipe     | \|        |
-
+<div align="center">
 
 | Frontend | Backend | Database | Cloud hosting/ Deployment | Git | Tests |
 | --- | --- | --- | --- | --- | --- |
 | [TypeScript](https://www.typescriptlang.org/) | [Java](https://www.java.com/en/) | [MySQL](https://www.mysql.com/) | [AWS](https://aws.amazon.com/) | [Git](https://git-scm.com/) | Jacoco |
 | [HTML, CSS](https://html.com/) | [Spring Boot](https://spring.io/projects/spring-boot) | [MySQL Workbench](https://www.mysql.com/products/workbench/) | [Ubuntu](https://ubuntu.com/aws) | [Git Bash](https://gitforwindows.org/) | SonarCloud |
-| [WebStorm](https://www.jetbrains.com/webstorm/) | [Maven](https://maven.apache.org/) | x | [Docker](https://www.docker.com/) | [GitHub](https://github.com/) | Karma |
-| x | [IntelliJ IDEA](https://www.jetbrains.com/idea/) | x | x | [GitHub Actions](https://github.com/features/actions) | x |
-- 
-- 
-- 
-- 
-- 
+| [WebStorm](https://www.jetbrains.com/webstorm/) | [Maven](https://maven.apache.org/) |  | [Docker](https://www.docker.com/) | [GitHub](https://github.com/) | Karma |
+|  | [IntelliJ IDEA](https://www.jetbrains.com/idea/) |  |  | [GitHub Actions](https://github.com/features/actions) |  |
 
-- 
-- 
-
-- 
-- 
-- 
-
-- 
-- 
-- 
-- 
-
-- 
-- 
-- 
-
-
-
-
-
-
-<table align="center">
-  <tr>
-    <td style="padding-top: 0px;">
-
-#### Frontend
-- [TypeScript](https://www.typescriptlang.org/)
-- [HTML, CSS](https://html.com/)
-- [WebStorm](https://www.jetbrains.com/webstorm/)
-
-    </td>
-    <td style="padding-top: 20px;">
-
-#### Backend
-- [Java](https://www.java.com/en/)
-- [Spring Boot](https://spring.io/projects/spring-boot/)
-- [Maven](https://maven.apache.org/)
-- [Postman](https://www.postman.com/)
-- [IntelliJ IDEA](https://www.jetbrains.com/idea/)
-
-    </td>
-    <td style="padding-top: 20px;">
-
-#### Database
-- [MySQL](https://www.mysql.com/)
-- [MySQL Workbench](https://www.mysql.com/products/workbench/)
-
-    </td>
-    </tr>
-    <tr>
-    <td style="padding-top: 20px;">
-
-#### Cloud hosting/ Deployment
-- [AWS](https://aws.amazon.com/)
-- [Ubuntu](https://ubuntu.com/aws)
-- [Docker](https://www.docker.com/)
-
-    </td>
-    <td style="padding-top: 20px;">
-
-#### Git
-- [Git](https://git-scm.com/)
-- [Git Bash](https://gitforwindows.org/)
-- [GitHub](https://github.com/)
-- [GitHub Actions](https://github.com/features/actions/)
-
-    </td>
-    <td style="padding-top: 20px;">
-
-#### Tests
-- Jacoco
-- SonarCloud
-- Karma
-
-    </td>
-  </tr>
-</table>
-
-
-
-
+</div>
 
 ## Screenshots
 
