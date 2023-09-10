@@ -31,9 +31,9 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - [GitHub](https://github.com/)
 - [GitHub Actions](https://github.com/features/actions)
 #### Tests
-- Jacoco
-- SonarCloud
-- Karma
+- [Jacoco](https://www.jacoco.org/jacoco/trunk/index.html)
+- [SonarCloud](https://www.sonarsource.com/products/sonarcloud/)
+- [Karma](https://karma-runner.github.io/latest/index.html)
 -->
 
 <br>
