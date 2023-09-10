@@ -36,6 +36,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - Karma
 -->
 
+<br>
 <div align="center">
 
 | Frontend | Backend | Database | Cloud hosting/ Deployment | Git | Tests |
