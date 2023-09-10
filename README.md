@@ -38,7 +38,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 #### Get all players
 
-```http
+```
   GET /api/players
 ```
 
@@ -50,7 +50,7 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 
 #### Get leaderboard (Top 10 players)
 
-```http
+```
   GET /api/leaderboard
 ```
 
