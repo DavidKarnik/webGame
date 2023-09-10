@@ -74,8 +74,6 @@ Load main page with score == 0, blank nickname textbox, time set to 10 seconds a
 - [Docker](https://www.docker.com/)
 
     </td>
-  </tr>
-  <tr>
     <td>
 
 #### Git
