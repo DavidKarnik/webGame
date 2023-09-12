@@ -1,4 +1,4 @@
-import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {Component,  HostListener, } from '@angular/core';
 import {ScoreService} from './score.service';
 import { TargetService } from './target.service';
 
@@ -89,18 +89,6 @@ export class TargetComponent {
   }
 
   onClickTarget() {
-    // console.log('score' + this.score);
-    // console.log('scoreService' + this.scoreService.getScoreData().score);
-
-    // only when starting new game
-    // if(this.scoreService.getScoreData().score == 0) {
-    // if(this.targetService.isFirstClickOnTarget) {
-    // if(this.timerService.getRunningInfo() == 0 && this.targetService.isFirstClickOnTarget) {
-    //   this.timerService.setRunningInfoTo(0); // starting
-    //   console.log('starting timer, target clicked');
-    //   // console.log('onClickTarget()' + ', this.timerService.setRunningInfoTo(0)' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())
-    // }
-
     this.score += 1;
     this.scoreService.incrementScore(1);
   }
@@ -115,8 +103,6 @@ export class TargetComponent {
     this.maxY = window.innerHeight;
     const minX = 0;
     const minY = 0;
-    // console.log(`maxX = ${maxX}`);
-    // console.log(`maxY = ${maxY}`);
 
     // Generujeme náhodné souřadnice pro novou pozici terče
     let newTargetX = Math.floor(Math.random() * (this.maxX - minX + 1)) + minX;
@@ -125,7 +111,6 @@ export class TargetComponent {
     // okraje location !
     // footer (header) location ... header = 10% of screen + 20 padding !
     let headerSize = (this.maxY * 0.1) + 20;
-    // console.log(`headerSize = ${headerSize}`);
     if (newTargetX < this.offsetTarget) {
       newTargetX = this.offsetTarget;
     }
@@ -143,11 +128,6 @@ export class TargetComponent {
     this.targetService.setTargetPosition(newTargetX, newTargetY);
 
     // Přesuneme terč na novou pozici
-    // this.targetPosition.x = newTargetX;
-    // this.targetPosition.y = newTargetY;
     this.targetPosition = this.targetService.getTargetPosition();
-    // console.log(`target x = ${newTargetX} y = ${newTargetY}`);
-    // console.log(`newTargetX: ${newTargetX}`);
-    // console.log(`newTargetY: ${newTargetY}`);
   }
 }

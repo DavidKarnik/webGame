@@ -50,13 +50,6 @@ export class HeaderComponent implements OnInit {
     // console.log("onClickGetScore(event: MouseEvent) called")
   }
 
-  targetClick() {
-
-  }
-
-  targetMiss() {
-
-  }
 
   // Metoda pro resetování skóre na nulu
   reset() {
@@ -64,25 +57,15 @@ export class HeaderComponent implements OnInit {
     this.scoreService.reset();
     this.targetService.setTargetPositionToCenter(); // center target
     this.timerService.resetTimer();
-    // console.log('reset()' + ', this.timerService.resetTimer()');
   }
 
   // Metoda pro zobrazení tabulky s nejlepšími skóre (leaderboard)
   showLeaderboard() {
-    // Zde implementovat kód pro zobrazení tabulky s nejlepšími skóre
-    // například pomocí dialogu nebo jiného komponentu
     if (this.modal) {
       this.modal.nativeElement.style.display = "block";
     }
-    // this.loadLeaderboardFromDatabase();
   }
 
-  // loadLeaderboardFromDatabase() {
-  //   // load leaderboard data from mySQL
-  //   this.playerService.findAll().subscribe(data => {
-  //     this.players = data;
-  //   });
-  // }
 
   /**
    * Just close modal Leaderboard

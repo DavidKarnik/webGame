@@ -29,7 +29,6 @@ export class TimerService {
   resetTimer() {
     this.timeLeft = this.myTime;
     this.setRunningInfoTo(2); // zastaveno resetem
-    // console.log('resetTimer()' + ', this.setRunningInfoTo(2)' + ', this.getRunningInfo() == ' + this.getRunningInfo())
   }
 
   setRunningInfoTo(_running: number) {

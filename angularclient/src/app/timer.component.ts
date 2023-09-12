@@ -9,33 +9,17 @@ import {TargetService} from "./target.service";
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.css'],
 })
-export class TimerComponent implements OnInit{
+export class TimerComponent {
   // timeLeft: string; // Počáteční čas
   timer: any;
 
-  // running: boolean = false;
-
   constructor(public timerService:TimerService,
-              public targetService: TargetService) {
-    // public timerService kvůli využití v timer.component.html
-    // this.timeLeft = this.timerService.getTime();
-    // this.timer.startTimer();
-  }
+              public targetService: TargetService) { }
 
-  ngOnInit(): void {
-    // this.startTimer();
-  }
-
-  // TODO Blbost, takhle to nejde, vždy po startu se bude spoštět... vyřešit jinak
   @HostListener('document:click', ['$event'])
   onClickCheckRunTimer(event: MouseEvent) {
-    // console.log('onClickCheckRunTimer() timer' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())
-    // timer state == 0 -> can start !
     if(this.timerService.getRunningInfo() == 0) {
-    // if(this.targetService.isFirstClickOnTarget) {
-      // console.log('if -> this.timerService.getRunningInfo() == 0' + 'this.startTimer();')
       this.startTimer();
-      // this.timerService.setRunningInfoTo(1);
     }
   }
 
@@ -44,9 +28,7 @@ export class TimerComponent implements OnInit{
     this.timer = setInterval(() => {
       // Reset button pushed ?
       if(this.timerService.getRunningInfo() == 2) {
-        // clearInterval(this.timer);
-        this.stopTimer();
-        // this.running = false;
+        clearInterval(this.timer);
         return;
       }
       const timeArray = this.timerService.getTime().split(':');
@@ -69,11 +51,6 @@ export class TimerComponent implements OnInit{
         this.timerService.setTime(`${minutes}:${seconds < 10 ? '0' : ''}${seconds}`);
       }
     }, 1000);
-  }
-
-  stopTimer() {
-    clearInterval(this.timer);
-    // this.timerService.setRunningInfoTo(0); // Nastavte běžící informace na 0 (zastaveno, čeká)
   }
 
 }
