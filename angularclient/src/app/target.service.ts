@@ -12,6 +12,8 @@ export class TargetService {
 
   isFirstClickOnTarget: boolean = true; // první klik musí být na terč
 
+  isModalOpened: boolean = false; // is modal with leaderboard is opened, no target action !
+
   setTargetPosition(x: number, y: number) {
     this.targetPosition.x = x;
     this.targetPosition.y = y;

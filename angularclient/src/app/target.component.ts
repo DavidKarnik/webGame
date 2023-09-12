@@ -39,7 +39,8 @@ export class TargetComponent {
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     // when timer == 00:00 -> ends .. do nothing
-    if(this.timerService.getRunningInfo() != 3) {
+    // timer can not end (00:00) and modal can not be opened
+    if(this.timerService.getRunningInfo() != 3 && !this.targetService.isModalOpened) {
       console.log('Click in target.component ! ... time state != 3')
       // Browser window
       this.maxY = window.innerHeight;

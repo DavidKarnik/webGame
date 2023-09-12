@@ -22,26 +22,8 @@
 </header>
 
 <!-- Modal section -->
-<!--<div class="backdrop" [style]="{'display':display}"></div>-->
-<!--<div class="modal" tabindex="-1" role="dialog"  [style]="{'display':display}">-->
-<!--  <div class="modal-dialog" role="document">-->
-<!--    <div class="modal-content">-->
-<!--      <div class="modal-header">-->
-<!--        <button type="button" class="close" aria-label="Close" (click)="closeLeaderboard()"><span aria-hidden="true">&times;</span></button>-->
-<!--        <h4 class="modal-title">Model Title</h4>-->
-<!--      </div>-->
-<!--      <div class="modal-body">-->
-<!--        <p>Model body text</p>-->
-<!--      </div>-->
-<!--      <div class="modal-footer">-->
-<!--        <button type="button" class="btn btn-default" (click)="closeLeaderboard()" >Close</button>-->
-<!--      </div>-->
-<!--    </div>&lt;!&ndash; /.modal-content &ndash;&gt;-->
-<!--  </div>&lt;!&ndash; /.modal-dialog &ndash;&gt;-->
-<!--</div>&lt;!&ndash; /.modal !&ndash;&gt;-->
-
-<!-- Modal section -->
-<div class="modal-outside" (click)="onOutsideClick($event)">
+<!-- click outside modal ? -->
+<!--<div class="modal-outside" (click)="onOutsideClick($event)"></div>-->
   <div id="myModal" class="modal" #myModal>
     <!-- Modal content -->
     <div class="modal-content">
@@ -65,5 +47,3 @@
       </table>
     </div>
   </div>
-
-</div>

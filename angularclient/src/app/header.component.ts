@@ -63,6 +63,10 @@ export class HeaderComponent implements OnInit {
   showLeaderboard() {
     if (this.modal) {
       this.modal.nativeElement.style.display = "block";
+      // can not click svg target (any action except modal)
+      // modal opened and timer stopped
+      this.targetService.isModalOpened = true;
+      this.timerService.setRunningInfoTo(2); // waiting for start (stopped)
     }
   }
 
@@ -73,19 +77,23 @@ export class HeaderComponent implements OnInit {
   closeLeaderboard() {
     if (this.modal) {
       this.modal.nativeElement.style.display = "none";
+      // close modal -> reset
+      this.targetService.isModalOpened = false;
+      this.reset();
     }
   }
 
-  /**
-   * Modal IS OPEN and is clicked outside of the modal window -> close modal
-   * @param event - Mouse click
-   */
-  onOutsideClick(event: MouseEvent) {
-    console.log(`onOutsideClick() run`)
-    // when outside modal is clicked or close modal cross button
-    if (this.modal && event.target === this.modal.nativeElement) {
-      this.modal.nativeElement.style.display = "none";
-    }
-  }
+  // TODO Implement outside click, only click OUTSIDE of modal window
+  // /**
+  //  * Modal IS OPEN and is clicked outside of the modal window -> close modal
+  //  * @param event - Mouse click
+  //  */
+  // onOutsideClick(event: MouseEvent) {
+  //   console.log(`onOutsideClick() run`)
+  //   // when outside modal is clicked or close modal cross button
+  //   if (this.modal && event.target === this.modal.nativeElement) {
+  //     this.modal.nativeElement.style.display = "none";
+  //   }
+  // }
 
 }
