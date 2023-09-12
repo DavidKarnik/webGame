@@ -23,6 +23,7 @@ export class TimerComponent implements OnInit{
     // this.startTimer();
   }
 
+  // TODO Blbost, takhle to nejde, vždy po startu se bude spoštět... vyřešit jinak
   @HostListener('document:click', ['$event'])
   onClickCheckRunTimer(event: MouseEvent) {
     // console.log('onClickCheckRunTimer() timer' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())

@@ -64,11 +64,18 @@ export class TargetComponent {
       ) {
         // Kliknutí na terč
         this.onClickTarget();
+        this.targetService.isFirstClickOnTarget = false; // první klik musí být na terč
       } else {
         // Kliknutí mimo terč
-        this.onMiss();
+        // Je to první klik po restartu, ne ?
+        if(!this.targetService.isFirstClickOnTarget){
+          this.onMiss();
+        }
       }
-      this.moveTarget(); // Při kliknutí se terč přesune na novou pozici
+      // Je to první klik po restartu, ne ?
+      if(!this.targetService.isFirstClickOnTarget) {
+        this.moveTarget(); // Při kliknutí se terč přesune na novou pozici
+      }
     }
   }
 
@@ -77,8 +84,10 @@ export class TargetComponent {
     // console.log('scoreService' + this.scoreService.getScoreData().score);
 
     // only when starting new game
-    if(this.scoreService.getScoreData().score == 0) {
+    // if(this.scoreService.getScoreData().score == 0) {
+    if(this.targetService.isFirstClickOnTarget) {
       this.timerService.setRunningInfoTo(0); // starting
+      console.log('starting timer, target clicked');
       // console.log('onClickTarget()' + ', this.timerService.setRunningInfoTo(0)' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())
     }
 
