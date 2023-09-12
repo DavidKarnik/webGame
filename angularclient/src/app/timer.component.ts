@@ -2,6 +2,8 @@ import {Component, HostListener, OnInit} from '@angular/core';
 
 import {TimerService} from "./timer.service";
 
+import {TargetService} from "./target.service";
+
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
@@ -13,7 +15,8 @@ export class TimerComponent implements OnInit{
 
   // running: boolean = false;
 
-  constructor(public timerService:TimerService) {
+  constructor(public timerService:TimerService,
+              public targetService: TargetService) {
     // public timerService kvůli využití v timer.component.html
     // this.timeLeft = this.timerService.getTime();
     // this.timer.startTimer();
@@ -28,6 +31,7 @@ export class TimerComponent implements OnInit{
   onClickCheckRunTimer(event: MouseEvent) {
     // console.log('onClickCheckRunTimer() timer' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())
     if(this.timerService.getRunningInfo() == 0) {
+    // if(this.targetService.isFirstClickOnTarget) {
       // console.log('if -> this.timerService.getRunningInfo() == 0' + 'this.startTimer();')
       this.startTimer();
       // this.timerService.setRunningInfoTo(1);

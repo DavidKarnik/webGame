@@ -64,6 +64,11 @@ export class TargetComponent {
       ) {
         // Kliknutí na terč
         this.onClickTarget();
+        // fist time click on target (start timer only once !)
+        if(this.targetService.isFirstClickOnTarget){
+          console.log('starting timer, target first clicked!');
+          this.timerService.setRunningInfoTo(0); // starting
+        }
         this.targetService.isFirstClickOnTarget = false; // první klik musí být na terč
       } else {
         // Kliknutí mimo terč
@@ -85,11 +90,12 @@ export class TargetComponent {
 
     // only when starting new game
     // if(this.scoreService.getScoreData().score == 0) {
-    if(this.targetService.isFirstClickOnTarget) {
-      this.timerService.setRunningInfoTo(0); // starting
-      console.log('starting timer, target clicked');
-      // console.log('onClickTarget()' + ', this.timerService.setRunningInfoTo(0)' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())
-    }
+    // if(this.targetService.isFirstClickOnTarget) {
+    // if(this.timerService.getRunningInfo() == 0 && this.targetService.isFirstClickOnTarget) {
+    //   this.timerService.setRunningInfoTo(0); // starting
+    //   console.log('starting timer, target clicked');
+    //   // console.log('onClickTarget()' + ', this.timerService.setRunningInfoTo(0)' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())
+    // }
 
     this.score += 1;
     this.scoreService.incrementScore(1);

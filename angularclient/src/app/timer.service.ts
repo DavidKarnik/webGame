@@ -10,7 +10,7 @@ export class TimerService {
   // 0 -> stopped, waiting for start
   // 1 -> running atm
   // 2 -> stopped by timer end, timer == 00:00
-  running: number = 0;
+  running: number = 2; // by default == 2
 
   sendScoreToBackend() {
     // Zde můžete implementovat logiku pro odeslání skóre na backend
