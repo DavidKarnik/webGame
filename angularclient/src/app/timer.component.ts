@@ -30,6 +30,7 @@ export class TimerComponent implements OnInit{
   @HostListener('document:click', ['$event'])
   onClickCheckRunTimer(event: MouseEvent) {
     // console.log('onClickCheckRunTimer() timer' + ', this.timerService.getRunningInfo() == ' + this.timerService.getRunningInfo())
+    // timer state == 0 -> can start !
     if(this.timerService.getRunningInfo() == 0) {
     // if(this.targetService.isFirstClickOnTarget) {
       // console.log('if -> this.timerService.getRunningInfo() == 0' + 'this.startTimer();')
@@ -55,7 +56,7 @@ export class TimerComponent implements OnInit{
       if (minutes === 0 && seconds === 0) {
         // Čas vypršel, odešlete skóre na backend
         this.timerService.sendScoreToBackend();
-        this.timerService.setRunningInfoTo(2);
+        this.timerService.setRunningInfoTo(3); // timer end
         clearInterval(this.timer);
       } else {
         if (seconds === 0) {

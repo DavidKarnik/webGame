@@ -38,48 +38,52 @@ export class TargetComponent {
    */
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
-    // Browser window
-    this.maxY = window.innerHeight;
-    let headerSize = (this.maxY * 0.1) + 20;
+    // when timer == 00:00 -> ends .. do nothing
+    if(this.timerService.getRunningInfo() != 3) {
+      console.log('Click in target.component ! ... time state != 3')
+      // Browser window
+      this.maxY = window.innerHeight;
+      let headerSize = (this.maxY * 0.1) + 20;
 
-    const mouseX = event.clientX;
-    const mouseY = event.clientY;
+      const mouseX = event.clientX;
+      const mouseY = event.clientY;
 
-    // header not clicked
-    if (mouseY < (this.maxY - this.offsetTarget - headerSize)) {
+      // header not clicked
+      if (mouseY < (this.maxY - this.offsetTarget - headerSize)) {
 
-      // Umístění X a Y relativně k oknu prohlížeče
+        // Umístění X a Y relativně k oknu prohlížeče
 
-      this.amouseX = mouseX;
-      this.amouseY = mouseY;
+        this.amouseX = mouseX;
+        this.amouseY = mouseY;
 
-      const targetPositionX = this.targetPosition.x;
-      const targetPositionY = this.targetPosition.y;
+        const targetPositionX = this.targetPosition.x;
+        const targetPositionY = this.targetPosition.y;
 
-      if (
-        mouseX >= targetPositionX - this.offsetTarget &&
-        mouseX <= targetPositionX + this.offsetTarget &&
-        mouseY >= targetPositionY - this.offsetTarget &&
-        mouseY <= targetPositionY + this.offsetTarget
-      ) {
-        // Kliknutí na terč
-        this.onClickTarget();
-        // fist time click on target (start timer only once !)
-        if(this.targetService.isFirstClickOnTarget){
-          console.log('starting timer, target first clicked!');
-          this.timerService.setRunningInfoTo(0); // starting
+        if (
+          mouseX >= targetPositionX - this.offsetTarget &&
+          mouseX <= targetPositionX + this.offsetTarget &&
+          mouseY >= targetPositionY - this.offsetTarget &&
+          mouseY <= targetPositionY + this.offsetTarget
+        ) {
+          // Kliknutí na terč
+          this.onClickTarget();
+          // fist time click on target (start timer only once !)
+          if (this.targetService.isFirstClickOnTarget) {
+            console.log('starting timer, target first clicked!');
+            this.timerService.setRunningInfoTo(0); // start timer
+          }
+          this.targetService.isFirstClickOnTarget = false; // první klik musí být na terč
+        } else {
+          // Kliknutí mimo terč
+          // Je to první klik po restartu, ne ?
+          if (!this.targetService.isFirstClickOnTarget) {
+            this.onMiss();
+          }
         }
-        this.targetService.isFirstClickOnTarget = false; // první klik musí být na terč
-      } else {
-        // Kliknutí mimo terč
         // Je to první klik po restartu, ne ?
-        if(!this.targetService.isFirstClickOnTarget){
-          this.onMiss();
+        if (!this.targetService.isFirstClickOnTarget) {
+          this.moveTarget(); // Při kliknutí se terč přesune na novou pozici
         }
-      }
-      // Je to první klik po restartu, ne ?
-      if(!this.targetService.isFirstClickOnTarget) {
-        this.moveTarget(); // Při kliknutí se terč přesune na novou pozici
       }
     }
   }

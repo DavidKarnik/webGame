@@ -7,9 +7,10 @@ import {Injectable} from "@angular/core";
 export class TimerService {
   myTime = '0:30'; // Počáteční čas
   timeLeft: string = this.myTime; // Zbývající čas
-  // 0 -> stopped, waiting for start
+  // 0 -> starting !
   // 1 -> running atm
-  // 2 -> stopped by timer end, timer == 00:00
+  // 2 -> stopped by reset, can start again
+  // 3 -> stopped by timer end, timer == 00:00
   running: number = 2; // by default == 2
 
   sendScoreToBackend() {
