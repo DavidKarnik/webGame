@@ -1,3 +1,31 @@
 <div class="timer">
   <span class="time-left">{{ this.timerService.getTime() }}</span>
 </div>
+
+<!-- Show this modal with results after time ends -->
+
+<div id="resultModal" class="modal" #resultModal>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closeResults()">&times;</span>
+    <h2>Your results</h2>
+
+    <!-- Generování řádků s daty -->
+
+    <div class="score">
+      <span class="label">Score:</span>
+      <span class="value">{{ scoreData.score }}</span>
+    </div>
+    <div class="spacer"></div> <!-- Prazdný <div> pro mezeru -->
+    <div class="miss">
+      <span class="label">Miss:</span>
+      <span class="value">{{ scoreData.misses }}</span>
+    </div>
+
+    <div class="nickname">
+      <input type="text" [(ngModel)]="nickname" placeholder="Enter nickname" />
+    </div>
+
+    <button class="save" (click)="saveResults()">Save</button>
+  </div>
+</div>

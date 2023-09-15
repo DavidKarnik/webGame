@@ -1,11 +1,12 @@
 import {Injectable} from "@angular/core";
+import {PlayerModel} from "./player.model";
 
 // pro uchování informací o timeru, pro sdílení dat
 @Injectable({
   providedIn: 'root'
 })
 export class TimerService {
-  myTime = '0:30'; // Počáteční čas
+  myTime = '0:10'; // Počáteční čas
   timeLeft: string = this.myTime; // Zbývající čas
   // 0 -> starting !
   // 1 -> running atm
@@ -13,7 +14,7 @@ export class TimerService {
   // 3 -> stopped by timer end, timer == 00:00
   running: number = 2; // by default == 2
 
-  sendScoreToBackend() {
+  sendScoreToBackend(player:PlayerModel) {
     // Zde můžete implementovat logiku pro odeslání skóre na backend
     console.log('sendScoreToBackend()');
   }

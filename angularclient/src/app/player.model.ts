@@ -1,5 +1,5 @@
 export interface PlayerModel {
-  id: string;
+  // id: string;
   nickname: string;
   score: number;
 }
