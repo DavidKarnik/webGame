@@ -14,10 +14,10 @@ export class TimerService {
   // 3 -> stopped by timer end, timer == 00:00
   running: number = 2; // by default == 2
 
-  sendScoreToBackend(player:PlayerModel) {
-    // Zde můžete implementovat logiku pro odeslání skóre na backend
-    console.log('sendScoreToBackend()');
-  }
+  // sendScoreToBackend(player:PlayerModel) {
+  //   // Zde můžete implementovat logiku pro odeslání skóre na backend
+  //   console.log('sendScoreToBackend()');
+  // }
 
   setTime(_time: string) {
     this.timeLeft = _time;

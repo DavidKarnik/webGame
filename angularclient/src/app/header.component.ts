@@ -62,6 +62,10 @@ export class HeaderComponent implements OnInit {
   // Metoda pro zobrazení tabulky s nejlepšími skóre (leaderboard)
   showLeaderboard() {
     if (this.modal) {
+      // refresh leaderboard data
+      this.playerService.findAll().subscribe(data => {
+        this.players = data;
+      });
       this.modal.nativeElement.style.display = "block";
       // can not click svg target (any action except modal)
       // modal opened and timer stopped
