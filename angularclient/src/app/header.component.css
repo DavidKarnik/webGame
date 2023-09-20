@@ -24,12 +24,15 @@ header {
 }
 
 .score .label, .miss .label {
-  font-size: 20px;
+  font-size: 35px;
+  font-family: sans-serif;
   font-weight: bold;
 }
 
 .score .value, .miss .value {
-  font-size: 18px;
+  font-size: 35px;
+  font-family: sans-serif;
+  /*font-weight: bold;*/
 }
 
 .spacer {
@@ -37,11 +40,15 @@ header {
 }
 
 .buttons {
+  /*font-size: 35px;*/
+  /*font-family: sans-serif;*/
+  /*font-weight: bold;*/
   display: flex;
   flex-direction: column;
 }
 
 .buttons button {
+  font-size: 18px;
   margin: 0 30px 5px 10px;
   padding: 10px 30px;
   top:50%;
