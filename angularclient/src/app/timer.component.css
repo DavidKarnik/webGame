@@ -38,7 +38,7 @@
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 40px;
   font-weight: bold;
 }
 
@@ -81,20 +81,33 @@ h2 {
 /*  width: 20px; !* Prostor mezi score a miss *!*/
 /*}*/
 
-/* Styl pro vstupní pole pro nickname */
-.nickname {
-  margin-top: 20px;
-  padding: 10px;
+/* Styl pro kontejner s textboxem a tlačítkem */
+.actions {
+  display: flex;
+  justify-content: center; /* Zarovnání na střed horizontálně */
+  align-items: center; /* Zarovnání na střed vertikálně */
+  margin-top: 20px; /* Mezera nahoru */
+}
+
+/* Styl pro textbox */
+.nickname input[type="text"] {
+  padding: 15px; /* Zvětšení paddingu pro textbox */
+  width: auto; /* Šířka se automaticky přizpůsobí obsahu */
+  margin-right: 10px; /* Mezera mezi textboxem a tlačítkem */
+  border: 1px solid #ccc; /* Přidání ohraničení */
 }
 
 /* Styl pro tlačítko "Save" */
 .save {
   background-color: #4CAF50;
   color: white;
-  padding: 10px 20px;
+  padding: 15px 30px; /* Zvětšení paddingu pro tlačítko */
   border: none;
   cursor: pointer;
-  margin-top: 20px;
+}
+
+.save:hover {
+  background-color: #45a049;
 }
 
 .save:hover {
