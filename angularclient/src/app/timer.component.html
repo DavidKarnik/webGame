@@ -11,21 +11,24 @@
     <h2>Your results</h2>
 
     <!-- Generování řádků s daty -->
-
-    <div class="score">
-      <span class="label">Score:</span>
-      <span class="value">{{ scoreData.score }}</span>
-    </div>
-    <div class="spacer"></div> <!-- Prazdný <div> pro mezeru -->
-    <div class="miss">
-      <span class="label">Miss:</span>
-      <span class="value">{{ scoreData.misses }}</span>
-    </div>
-
-    <div class="nickname">
-      <input type="text" [(ngModel)]="nickname" placeholder="Enter nickname" />
+    <div class="info">
+      <div class="score">
+        <span class="label">Score:</span>
+        <span class="value">{{ scoreData.score }}</span>
+      </div>
+      <!--      <div class="spacer"></div> &lt;!&ndash; Prazdný <div> pro mezeru &ndash;&gt;-->
+      <div class="miss">
+        <span class="label">Miss:</span>
+        <span class="value">{{ scoreData.misses }}</span>
+      </div>
     </div>
 
-    <button class="save" (click)="saveResults()">Save</button>
+    <div class="actions">
+      <div class="nickname">
+        <input type="text" [(ngModel)]="nickname" placeholder="Enter nickname"/>
+      </div>
+
+      <button class="save" (click)="saveResults()">Save</button>
+    </div>
   </div>
 </div>
