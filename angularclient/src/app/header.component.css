@@ -92,7 +92,7 @@ header {
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -112,9 +112,12 @@ header {
 
 /* Styl pro tabulku */
 table {
-  width: 70%;
+  width: 85%;
   border-collapse: collapse;
   margin: 0 auto;
+  font-size: 20px;
+  /*font-family: "Open Sans", sans-serif;*/
+  /*padding-bottom: 50px;*/
 }
 
 table th, table td {
